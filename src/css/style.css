@@ -1,0 +1,348 @@
+/* --- GOOGLE FONTS Y VARIABLES DE DISEÑO (BASADO EN TU IMAGEN) --- */
+@import url('https://fonts.googleapis.com/css2?family=Judson:wght@400;700&family=Metamorphous&display=swap');
+
+:root {
+    --color-primary: #821A29;
+    /* Rojo vino */
+    --color-dark-accent: #561A22;
+    /* Café oscuro */
+    --color-cta: #F6B269;
+    /* Naranja/Durazno */
+    --color-secondary-accent: #71BEC6;
+    /* Azul verdoso */
+    --color-background: #EADCD9;
+    /* Hueso/Rosa pálido */
+    --color-text: #3d1a1e;
+    /* Texto oscuro para fondos claros */
+    --font-title: 'Metamorphovs', serif;
+    --font-body: 'Judson', sans-serif;
+}
+
+/* --- ESTILOS GLOBALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-title);
+    line-height: 1.2;
+    color: var(--color-primary);
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- HEADER / NAVEGACIÓN --- */
+.main-header {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--color-dark-accent);
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+/* --- FOOTER --- */
+.main-footer {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: 4rem 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-col h3,
+.footer-col h4 {
+    color: white;
+}
+
+.footer-col a,
+.footer-col p {
+    color: var(--color-background);
+    font-weight: normal;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- PÁGINAS Y SECCIONES --- */
+.page-container {
+    padding: 4rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-subtitle {
+    max-width: 700px;
+    margin: -2rem auto 3rem;
+    text-align: center;
+    color: var(--color-dark-accent);
+}
+
+.card-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+/* --- PÁGINA DE CONCURSOS --- */
+.contest-tabs {
+    display: flex;
+    background-color: #f0e9e8;
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.contest-tab {
+    flex-grow: 1;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    background: none;
+    color: var(--color-dark-accent);
+    opacity: 0.7;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.contest-tab.active {
+    opacity: 1;
+    background-color: white;
+    color: var(--color-primary);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.contest-content.hidden {
+    display: none;
+}
+
+.contest-details {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.contest-details ul {
+    list-style: none;
+}
+
+.contest-details li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+.contest-details li::before {
+    content: '•';
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+}
+
+.side-panel {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* --- FORMULARIO DE CONTACTO --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.contact-form-trigger {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-info-item {
+    background-color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+}
+
+/* --- ESTILOS DEL FOOTER (Basado en la imagen) --- */
+.main-footer {
+    background-color: var(--color-primary);
+    /* Color de fondo principal del footer */
+    color: var(--color-background);
+    padding: 4rem 0 2rem;
+    font-size: 0.9rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(234, 220, 217, 0.2);
+}
+
+.footer-col h3,
+.footer-col h4 {
+    color: white;
+    font-family: var(--font-title);
+    margin-bottom: 1rem;
+}
+
+.footer-col a,
+.footer-col p {
+    color: var(--color-background);
+    font-weight: normal;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.footer-col a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-highlight {
+    color: var(--color-cta);
+    /* Color naranja/durazno para destacar */
+    font-weight: bold;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
